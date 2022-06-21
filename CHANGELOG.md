@@ -5,3 +5,7 @@
 ## [0.0.2] - Fix BUG.
 
 * Improved sometime BUG when load package detail.
+
+## [0.0.3] - Fix BUG.
+
+* Fixed BUG.
