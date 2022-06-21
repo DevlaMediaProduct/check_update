@@ -1,14 +1,7 @@
-## 0.0.1
+## [0.0.1] - First Release.
 
-- A lightweight flutter plugin to check if your app is up-to-date on Google Play Store or Apple App Store
+* Checking your app new version available.
 
-## 0.0.2
+## [0.0.2] - Fix BUG.
 
-- Add ApkPure Store to check on
-
-## 0.0.3
-
-- Fix the version comparing algorithm
-## 0.3.1
-
-- Fix the version number for the new Google Play Store changes
+* Improved sometime BUG when load package detail.

@@ -1,4 +1,4 @@
-package com.example.app_version_checker
+package com.devla.check_update
 
 import androidx.annotation.NonNull
 
@@ -17,7 +17,7 @@ class AppVersionCheckerPlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var channel : MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "app_version_checker")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "app_check_update")
     channel.setMethodCallHandler(this)
   }
 

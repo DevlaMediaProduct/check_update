@@ -1,4 +1,4 @@
-group 'com.example.app_version_checker'
+group 'com.devla.check_update'
 version '1.0-SNAPSHOT'
 
 buildscript {

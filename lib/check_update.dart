@@ -10,11 +10,11 @@ enum AndroidStore { googlePlayStore, apkPure }
 class AppVersionChecker {
   /// The current version of the app.
   /// if [currentVersion] is null the [currentVersion] will take the Flutter package version
-  final String? currentVersion;
+  final String currentVersion;
 
   /// The id of the app (com.exemple.your_app).
   /// if [appId] is null the [appId] will take the Flutter package identifier
-  final String? appId;
+  final String appId;
 
   /// Select The marketplace of your app
   /// default will be `AndroidStore.GooglePlayStore`
@@ -47,9 +47,9 @@ class AppVersionChecker {
 
   Future<AppCheckerResult> _checkAppleStore(
       String currentVersion, String packageName) async {
-    String? errorMsg;
-    String? newVersion;
-    String? url;
+    String errorMsg;
+    String newVersion;
+    String url;
     var uri =
         Uri.https("itunes.apple.com", "/lookup", {"bundleId": packageName});
     try {
@@ -81,9 +81,9 @@ class AppVersionChecker {
 
   Future<AppCheckerResult> _checkPlayStore(
       String currentVersion, String packageName) async {
-    String? errorMsg;
-    String? newVersion;
-    String? url;
+    String errorMsg;
+    String newVersion;
+    String url;
     final uri = Uri.https(
         "play.google.com", "/store/apps/details", {"id": packageName});
     try {
@@ -93,7 +93,7 @@ class AppVersionChecker {
             "Can't find an app in the Google Play Store with the id: $packageName";
       } else {
         newVersion = RegExp(r',\[\[\["([0-9,\.]*)"]],')
-            .firstMatch(response.body)!
+            .firstMatch(response.body)
             .group(1);
         url = uri.toString();
       }
@@ -111,9 +111,9 @@ class AppVersionChecker {
 
 Future<AppCheckerResult> _checkApkPureStore(
     String currentVersion, String packageName) async {
-  String? errorMsg;
-  String? newVersion;
-  String? url;
+  String errorMsg;
+  String newVersion;
+  String url;
   Uri uri = Uri.https("apkpure.com", "$packageName/$packageName");
   try {
     final response = await http.get(uri);
@@ -123,8 +123,8 @@ Future<AppCheckerResult> _checkApkPureStore(
     } else {
       newVersion = RegExp(
               r'<div class="details-sdk"><span itemprop="version">(.*?)<\/span>for Android<\/div>')
-          .firstMatch(response.body)!
-          .group(1)!
+          .firstMatch(response.body)
+          .group(1)
           .trim();
       url = uri.toString();
     }
@@ -144,13 +144,13 @@ class AppCheckerResult {
   final String currentVersion;
 
   /// return the new app version
-  final String? newVersion;
+  final String newVersion;
 
   /// return the app url
-  final String? appURL;
+  final String appURL;
 
   /// return error message if found else it will return `null`
-  final String? errorMessage;
+  final String errorMessage;
 
   AppCheckerResult(
     this.currentVersion,

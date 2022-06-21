@@ -9,7 +9,7 @@ Add App Version Checker to your pubspec:
 
 ```yaml
 dependencies:
-  flutter_app_version_checker: any # or the latest version on Pub
+  check_update: any # or the latest version on Pub
 ```
 
 ### Usage

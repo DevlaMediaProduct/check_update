@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  const MethodChannel channel = MethodChannel('app_version_checker');
+  const MethodChannel channel = MethodChannel('app_check_update');
 
   TestWidgetsFlutterBinding.ensureInitialized();
 

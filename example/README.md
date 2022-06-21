@@ -1,6 +1,6 @@
-# app_version_checker_example
+# check_update_example
 
-Demonstrates how to use the app_version_checker plugin.
+Demonstrates how to use the app_check_update plugin.
 
 ## Getting Started
 
